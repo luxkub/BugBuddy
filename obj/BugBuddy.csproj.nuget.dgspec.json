@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lxkub\\source\\repos\\BugBuddy\\BugBuddy.csproj": {}
+    "C:\\Users\\lxkub\\repos\\BugBuddy\\BugBuddy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lxkub\\source\\repos\\BugBuddy\\BugBuddy.csproj": {
+    "C:\\Users\\lxkub\\repos\\BugBuddy\\BugBuddy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lxkub\\source\\repos\\BugBuddy\\BugBuddy.csproj",
+        "projectUniqueName": "C:\\Users\\lxkub\\repos\\BugBuddy\\BugBuddy.csproj",
         "projectName": "BugBuddy",
-        "projectPath": "C:\\Users\\lxkub\\source\\repos\\BugBuddy\\BugBuddy.csproj",
+        "projectPath": "C:\\Users\\lxkub\\repos\\BugBuddy\\BugBuddy.csproj",
         "packagesPath": "C:\\Users\\lxkub\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lxkub\\source\\repos\\BugBuddy\\obj\\",
+        "outputPath": "C:\\Users\\lxkub\\repos\\BugBuddy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lxkub\\AppData\\Roaming\\NuGet\\NuGet.Config",

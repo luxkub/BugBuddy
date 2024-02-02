@@ -10,7 +10,7 @@ namespace BugBuddy.Models
         public string Project { get; set; }
         public string Priority { get; set; }
         public string Status { get; set; }
-        public string Resolution { get; set; }
+        public string? Resolution { get; set; }
         [Display(Name = "Date Created")]
         public DateTime CreatedDate { get; set; }
 

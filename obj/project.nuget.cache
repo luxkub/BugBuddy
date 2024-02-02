@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3Le0LsNbRsr62LBtEMJrV/HGiZeEwbLcHo5n9tquJkOJ0PLsc8IpmME4uEQUwWS30WDkUK3GoNCxdXQkl3Y4gA==",
+  "dgSpecHash": "4Rx5LBefbr5+rVXgYMaJBPxOvhXuTtuSPaAkxh6I9mZ1lsMcKa7GMf/2KM9nWl8OMcGpunFuT7dblMx43zHv5g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lxkub\\source\\repos\\BugBuddy\\BugBuddy.csproj",
+  "projectFilePath": "C:\\Users\\lxkub\\repos\\BugBuddy\\BugBuddy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lxkub\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\lxkub\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -22,7 +22,22 @@ namespace BugBuddy.Controllers
         // GET: Bugs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Bug.ToListAsync());
+            var bugs = await _context.Bug
+                .Select(bug => new Bug
+                {
+                    // Copy other properties
+                    Id = bug.Id,
+                    Title = bug.Title,
+                    Description = bug.Description,
+                    Project = bug.Project,
+                    Priority = bug.Priority,
+                    Status = bug.Status,
+                    Resolution = bug.Resolution ?? "", // Handle NULL here
+                    CreatedDate = bug.CreatedDate
+                })
+                .ToListAsync();
+
+            return View(bugs);
         }
 
         // GET: Bugs/ShowSearchForm
@@ -40,19 +55,27 @@ namespace BugBuddy.Controllers
         // GET: Bugs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
             }
 
-            var bug = await _context.Bug
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var bug = await _context.Bug.FirstOrDefaultAsync(m => m.Id == id);
+
             if (bug == null)
             {
                 return NotFound();
             }
 
+            // Check for null and assign default
+            if (bug.Resolution == null)
+            {
+                bug.Resolution = "";
+            }
+
             return View(bug);
+
         }
 
         // GET: Bugs/Create
@@ -66,7 +89,7 @@ namespace BugBuddy.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Project,Priority,Status,Resolution,CreatedDate")] Bug bug)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,Project,Priority,Status,CreatedDate")] Bug bug)
         {
             if (ModelState.IsValid)
             {
@@ -90,6 +113,10 @@ namespace BugBuddy.Controllers
             {
                 return NotFound();
             }
+
+            // Check for NULL before accessing the 'Resolution' property
+            bug.Resolution = bug.Resolution ?? "";
+
             return View(bug);
         }
 
@@ -104,6 +131,9 @@ namespace BugBuddy.Controllers
             {
                 return NotFound();
             }
+
+            // Handle NULL value for Resolution
+            bug.Resolution = bug.Resolution ?? "";
 
             if (ModelState.IsValid)
             {
