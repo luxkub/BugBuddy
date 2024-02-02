@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" onsubmit="return handleFormSubmission()">
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
@@ -38,7 +38,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
+                <select asp-for="Status" class="form-control">
+                    <option value="Open">Open</option>
+                    <option value="Closed">Closed</option>
+                </select>
+
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -56,3 +60,19 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+@section scripts {
+    <script>
+        function handleFormSubmission() {
+            var resolution = document.getElementById("Resolution").value;
+            var status = document.getElementById("Status");
+
+            if (resolution.trim() !== "") {
+                // If resolution is entered, set status to "Closed"
+                status.value = "Closed";
+            }
+
+            // Continue with the form submission
+            return true;
+        }
+    </script>
+}

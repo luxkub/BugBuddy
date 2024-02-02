@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BugBuddy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+726a530aee97f220a548b2b82fba4fd0036e2ddf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f3f27b29442ae73531674cff57424dbcac0ae9e")]
 [assembly: System.Reflection.AssemblyProductAttribute("BugBuddy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BugBuddy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,6 +9,11 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<label>
+    <input type="checkbox" id="showOpenBugs" /> Show Open Bugs Only
+</label>
+
 <table class="table">
     <thead>
         <tr>
@@ -37,8 +42,9 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
+        @foreach (var item in Model.OrderByDescending(b => b.CreatedDate))
+        {
+            <tr style="background-color: @(item.Priority == "Low" ? "lightgreen" : item.Priority == "Medium" ? "#FFA500" : item.Priority == "High" ? "lightcoral" : "")">
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
@@ -69,3 +75,19 @@
 }
     </tbody>
 </table>
+
+@section scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var showOpenBugsCheckbox = document.getElementById("showOpenBugs");
+            var rows = document.querySelectorAll("tbody tr");
+
+            showOpenBugsCheckbox.addEventListener("change", function () {
+                for (var i = 0; i < rows.length; i++) {
+                    var status = rows[i].getElementsByTagName("td")[4].innerText; // Assuming status is in the 5th column
+                    rows[i].style.display = showOpenBugsCheckbox.checked && status !== "Open" ? "none" : "";
+                }
+            });
+        });
+    </script>
+}
