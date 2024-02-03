@@ -28,6 +28,4 @@ Users can now add and view notes directly on the edit or details page of a bug.
 3. Add new notes using the "Add Note" section.
 4. View existing notes in the "Notes" section, sorted with the newest notes displayed first.
 
-[Include any other updates or changes from previous versions]
-
 Thank you for using BugBuddy!
