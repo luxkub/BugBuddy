@@ -54,6 +54,33 @@
             </div>
         </form>
     </div>
+
+    <div class="col-md-8">
+        <!-- Right side with bug notes and add note feature -->
+        <div>
+            <h4>Notes</h4>
+            <ul>
+                @foreach (var note in Model.Notes.OrderByDescending(n => n.Date))
+                {
+                    <p>@note.Text - Note added: @note.Date.ToString("M/d/yyyy h:mm tt")</p>
+                }
+            </ul>
+        </div>
+
+        <div>
+            <h4>Add Note</h4>
+            <form asp-action="AddNote" method="post">
+                <input type="hidden" name="bugId" value="@Model.Id" />
+                <input type="hidden" name="returnUrl" value="Edit" />
+                <div class="form-group">
+                    <textarea name="noteText" class="form-control" rows="3" placeholder="Type your note here"></textarea>
+                </div>
+                <div class="form-group" style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary">Add Note</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <div>

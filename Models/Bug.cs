@@ -13,12 +13,14 @@ namespace BugBuddy.Models
         public string? Resolution { get; set; }
         [Display(Name = "Date Created")]
         public DateTime CreatedDate { get; set; }
+        public List<Note> Notes { get; set; }
 
         public Bug()
         {
             Status = "Open";
             CreatedDate = DateTime.Now;
             Resolution = "";
+            Notes = new List<Note>();
         }
     }
 }

@@ -19,6 +19,40 @@ namespace BugBuddy.Controllers
             _context = context;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AddNote(int bugId, string noteText, string returnUrl)
+        {
+            var bug = await _context.Bug.Include(b => b.Notes).FirstOrDefaultAsync(b => b.Id == bugId);
+
+            if (bug == null)
+            {
+                return NotFound();
+            }
+
+            var newNote = new Note
+            {
+                Text = noteText
+            };
+
+            bug.Notes.Add(newNote);
+            await _context.SaveChangesAsync();
+
+            // Determine the return action based on the provided returnUrl
+            if (returnUrl == "Details")
+            {
+                return View("Details", bug);
+            }
+            else if (returnUrl == "Edit")
+            {
+                return View("Edit", bug);
+            }
+            else
+            {
+                // Handle any other cases or return an error if an unexpected returnUrl is provided
+                return BadRequest("Invalid return URL specified.");
+            }
+        }
+
         // GET: Bugs
         public async Task<IActionResult> Index()
         {
@@ -55,13 +89,12 @@ namespace BugBuddy.Controllers
         // GET: Bugs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-
             if (id == null)
             {
                 return NotFound();
             }
 
-            var bug = await _context.Bug.FirstOrDefaultAsync(m => m.Id == id);
+            var bug = await _context.Bug.Include(b => b.Notes).FirstOrDefaultAsync(m => m.Id == id);
 
             if (bug == null)
             {
@@ -75,7 +108,6 @@ namespace BugBuddy.Controllers
             }
 
             return View(bug);
-
         }
 
         // GET: Bugs/Create
@@ -108,7 +140,7 @@ namespace BugBuddy.Controllers
                 return NotFound();
             }
 
-            var bug = await _context.Bug.FindAsync(id);
+            var bug = await _context.Bug.Include(b => b.Notes).FirstOrDefaultAsync(m => m.Id == id);
             if (bug == null)
             {
                 return NotFound();

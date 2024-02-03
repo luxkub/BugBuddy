@@ -1,14 +1,14 @@
-# BugBuddy v1.1.0 Release
+# BugBuddy
+## BugBuddy v1.4.0 Release
 
-BugBuddy is a user-friendly BugTracker system designed to help you manage and track bugs in your projects. In this release, we introduce a new feature that allows users to save bug edits with an empty resolution.
+BugBuddy is a user-friendly BugTracker system designed to help you manage and track bugs in your projects. In this release (v1.4.0), we've introduced a new feature that allows users to add and view notes directly on the details page of a bug. This enhancement aims to streamline communication and collaboration around specific bug instances.
 
-## What's New in v1.1.0
+### What's New in v1.4.0
 
-Users now have the ability to save bug edits without providing a resolution. This enhancement provides greater flexibility in managing and updating bug information.
+#### 1. Bug Notes
+Users can now add and view notes directly on the edit or details page of a bug.
 
 ## Getting Started
-
-### Prerequisites
 
 Make sure you have the following software installed on your machine:
 
@@ -17,15 +17,30 @@ Make sure you have the following software installed on your machine:
 
 ## How to Use the New Feature
 
-With the latest version (v1.1.0) of BugBuddy, follow these steps to take advantage of the new feature:
+With the latest version (v1.4.0) of BugBuddy, take advantage of the new feature:
 
 1. Open your BugBuddy project in Visual Studio.
-2. Navigate to the Bug Details or Edit Bug page.
-3. When editing a bug, you can now leave the resolution field empty if no resolution is provided.
-4. Save your changes.
+2. Navigate to the details page of a bug.
+3. Add new notes using the "Add Note" section.
+4. View existing notes in the "Notes" section, sorted with the newest notes displayed first.
 
-## Bug Reporting
+## Additional Enhancements from Previous Releases
 
-If you encounter any issues or have suggestions for improvement, please [create a new issue](https://github.com/yourusername/BugBuddy/issues) on our GitHub repository.
+In case you missed the improvements from the previous release (v1.3.0), here's a quick recap:
+
+#### 1. Automatic Status Change on Resolution
+Entering a resolution when editing a bug now automatically changes the status to "Closed" when saving. This streamlines the bug resolution process and ensures accurate status updates.
+
+#### 2. Newest Bugs Displayed First
+Bugs are now sorted with the newest ones displayed first. This improves the usability of the BugBuddy interface by presenting the most recent issues at the top of the list.
+
+#### 3. Checkbox for Displaying Open Bugs Only
+A new checkbox has been added to allow users to filter and display open bugs only. This enhances the bug visibility options, providing a quick way to focus on unresolved issues.
+
+#### 4. Priority-Based Bug Coloring
+Bug priority is now visually represented with different colors:
+- Low priority bugs are displayed in green.
+- Medium priority bugs are displayed in orange.
+- High priority bugs are displayed in pink.
 
 Thank you for using BugBuddy!
