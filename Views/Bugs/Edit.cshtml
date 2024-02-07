@@ -48,6 +48,7 @@
             <div class="form-group">
                 <label asp-for="Resolution" class="control-label"></label>
                 <input asp-for="Resolution" class="form-control" />
+                <span id="resolutionValidationMessage" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -75,7 +76,7 @@
                 <div class="form-group">
                     <textarea name="noteText" class="form-control" rows="3" placeholder="Type your note here" required></textarea>
                 </div>
-                <div class="form-group" style="margin-top: 10px;">
+                <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add Note</button>
                 </div>
             </form>
@@ -92,10 +93,14 @@
         function handleFormSubmission() {
             var resolution = document.getElementById("Resolution").value;
             var status = document.getElementById("Status");
+            var resolutionValidationMessage = document.getElementById("resolutionValidationMessage");
 
-            if (resolution.trim() !== "") {
-                // If resolution is entered, set status to "Closed"
-                status.value = "Closed";
+            // Check if status is set to "Open" and resolution is not empty
+            if (status.value === "Open" && resolution.trim() !== "") {
+                resolutionValidationMessage.innerText = "Resolution cannot be entered when Status is set to Open.";
+                return false;
+            } else {
+                resolutionValidationMessage.innerText = "";
             }
 
             // Continue with the form submission

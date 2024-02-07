@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Azure.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace BugBuddy.Models
 {

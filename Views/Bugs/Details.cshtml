@@ -40,12 +40,16 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Status)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Resolution)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Resolution)
-        </dd>
+        @if (!string.IsNullOrWhiteSpace(Model.Resolution))
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Resolution)
+            </dt>
+
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Resolution)
+            </dd>
+        }
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CreatedDate)
         </dt>
@@ -56,6 +60,7 @@
 </div>
 
 <div>
+    <!-- Right side with bug notes and add note feature -->
     <h4>Notes</h4>
     <ul>
         @foreach (var note in Model.Notes.OrderByDescending(n => n.Date))

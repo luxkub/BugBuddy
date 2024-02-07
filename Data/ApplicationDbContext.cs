@@ -4,14 +4,15 @@ using BugBuddy.Models;
 
 namespace BugBuddy.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
-        public DbSet<BugBuddy.Models.Bug> Bug { get; set; } = default!;
-        public DbSet<BugBuddy.Models.Note> Note { get; set; } = default!;
+
+        public DbSet<Bug> Bug { get; set; } // Reverted back to original name
+        public DbSet<Note> Note { get; set; } // Reverted back to original name
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
