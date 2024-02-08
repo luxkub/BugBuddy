@@ -1,11 +1,10 @@
 # BugBuddy
-## BugBuddy v1.4.2 Release
+## BugBuddy v1.4.3 Release
 
 BugBuddy is a user-friendly BugTracker system designed to help you manage and track bugs in your projects. In this release (v1.4.1), we've addressed a bug related to the notes feature for an improved user experience.
 
 ### Bug Fix
-- Users can now filter their list of Bugs to Show Open Bugs Only by selecting a checkbox at the top of each table.
-- Minor bug fixes.
+- Minor UI tweaks.
 
 ## Getting Started
 
@@ -19,7 +18,8 @@ Make sure you have the following software installed on your machine:
 If you missed the improvements from the previous release (v1.4.0), here's a quick recap:
 
 #### 1. Minor Bug Fixes
-- Fixed an issue where an error would occur if users submitted notes without entering any text. Added input validation for notes to ensure a smoother user experience.
+- Users can now filter their list of Bugs to Show Open Bugs Only by selecting a checkbox at the top of each table.
+- Minor bug fixes.
 
 ### Getting Started with Bug Notes
 
