@@ -8,7 +8,7 @@ BugBuddy is a user-friendly BugTracker system designed to help you manage and tr
 - **User Account Management**: Users can sign up for an account to create and manage their bugs.
 - **Bug Properties**: Bugs can be characterized by properties such as Title, Description, Project, Priority, Status, Resolution, and Date Created.
 - **Notes**: Users can add notes to bugs for better communication and tracking.
-- **Search Functionality**: Users can search for bugs to quickly find the information they need.
+- **Search Functionality**: Users can search for bugs by title to quickly find the information they need.
 
 ### Bug Fix
 - Minor UI tweaks.
