@@ -3,6 +3,13 @@
 
 BugBuddy is a user-friendly BugTracker system designed to help you manage and track bugs in your projects. In this release (v1.4.1), we've addressed a bug related to the notes feature for an improved user experience.
 
+### Major Features
+
+- **User Account Management**: Users can sign up for an account to create and manage their bugs.
+- **Bug Properties**: Bugs can be characterized by properties such as Title, Description, Project, Priority, Status, Resolution, and Date Created.
+- **Notes**: Users can add notes to bugs for better communication and tracking.
+- **Search Functionality**: Users can search for bugs to quickly find the information they need.
+
 ### Bug Fix
 - Minor UI tweaks.
 
