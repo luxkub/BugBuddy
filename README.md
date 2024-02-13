@@ -2,6 +2,9 @@
 ## BugBuddy v1.4.3 Release
 
 BugBuddy is a user-friendly BugTracker system designed to help you manage and track bugs in your projects. In this release (v1.4.1), we've addressed a bug related to the notes feature for an improved user experience.
+![image](https://github.com/luxkub/BugBuddy/assets/102517696/2368571d-b3ea-4f9c-9a18-cd419192c676)
+![image](https://github.com/luxkub/BugBuddy/assets/102517696/099c14dd-00a5-4619-9201-cb84d69fe030)
+
 
 ### Major Features
 
