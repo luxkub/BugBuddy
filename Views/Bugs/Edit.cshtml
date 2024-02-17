@@ -96,7 +96,10 @@
             var resolutionValidationMessage = document.getElementById("resolutionValidationMessage");
 
             // Check if status is set to "Open" and resolution is not empty
-            if (status.value === "Open" && resolution.trim() !== "") {
+            if (status.value === "Closed" && resolution.trim() === "") {
+                resolutionValidationMessage.innerText = "Resolution must be entered when Status is set to Closed.";
+                return false;
+            } else if (status.value === "Open" && resolution.trim() !== "") {
                 resolutionValidationMessage.innerText = "Resolution cannot be entered when Status is set to Open.";
                 return false;
             } else {
